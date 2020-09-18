@@ -52,6 +52,7 @@ int main() {
 	for (int i = 0; i < count; i++) cout << finalWord2[i];
 	cout << "\n\n";
 
-	delete[] finalWord1, finalWord2;
+	delete[] finalWord1;
+	delete[] finalWord2;
 	return 0;
 }
