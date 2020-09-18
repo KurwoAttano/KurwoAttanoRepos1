@@ -6,27 +6,52 @@
 
 using namespace std;
 
-void myStrncpy(char* finArr, char* arr, int len) {
+int getLength(char text[]) {
+	int arrayLength = 0;
+	for (int i = 0; text[i]; i++)
+		arrayLength++;
+	return arrayLength;
+}
 
-	for (int i = 0; i < len; i++)
-		finArr[i] = arr[i];
+void myStrncpy(char* finArr, char* arr, int len) {
+	int cutLen = len;
+	int finArrLen = getLength(finArr);
+	int arrLen = getLength(arr);
+	
+	if (cutLen > finArrLen)
+		cutLen = finArrLen;
+	else if (cutLen > arrLen)
+		cutLen = arrLen;
+
+	for (int i = 0; i < finArrLen; i++)
+		if (i < cutLen)
+			finArr[i] = arr[i];
+		else
+			finArr[i] = ' ';
 }
 
 int main() {
-	char word[11] = {'C','h','e','c','h','e','t','k','i','n'};
-	char* wordLink = &(word[6]);
-	cout << wordLink << "\n";
-	int const count = 5;
+	char word[64];
+	int count;
+
+	cout << "Enter text: ";
+	cin.getline(word, 64);
+	cout << "Enter copy lenght: ";
+	cin >> count; 
+	cout << endl;
 
 	cout << "strncpy: ";
-	char finalWord1[count];
+	char* finalWord1 = new char[count];
 	strncpy(finalWord1, word, count);
 	for (int i = 0; i < count; i++) cout << finalWord1[i];
 	cout << "\n\n";
 
 	cout << "myStrncpy: ";
-	char finalWord2[count];
+	char* finalWord2 = new char[count];
 	myStrncpy(finalWord2, word, count);
 	for (int i = 0; i < count; i++) cout << finalWord2[i];
 	cout << "\n\n";
+
+	delete[] finalWord1, finalWord2;
+	return 0;
 }
