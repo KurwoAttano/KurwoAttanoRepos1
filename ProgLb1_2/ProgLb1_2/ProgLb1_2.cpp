@@ -17,7 +17,8 @@ void initArray(float* arr, int len){
 void processArray(float* arr, float fArr[], int iLen, int jLen){
 	float* arrPointer = arr;
 	float* fArrPointer = fArr;
-	for (int j = 0; j < iLen * jLen; j++) {
+	for (int j = 0; j < (iLen * jLen); j++) {
+		//cout << j << endl;
 		*fArrPointer = *arrPointer;
 		fArrPointer++;
 		arrPointer++;
@@ -31,18 +32,25 @@ void showArray(float fArr[], int iLen, int jLen){
 			cout << setw(10) << *fArrPointer << " ";
 			fArrPointer++;
 		}
-		cout << "\n";
+		cout << endl;
 	}
 }
 
 int main()
 {
-	float primaryArray[16];
-	float finalArray[4][4];
+	float* primaryArray = new float[16];
+	float** finalArray = new float*[4];
+	for (int i = 0; i < 4; i++)
+		finalArray[i] = new float[4];
 
 	initArray(primaryArray, 16);
 	processArray(primaryArray, &finalArray[0][0], 4, 4);
 	showArray(&finalArray[0][0], 4, 4);
+
+	//delete[] primaryArray;
+	/*for (int i = 0; i < 4; i++)
+		delete[] finalArray[i];
+	delete[] finalArray;*/
 
 	return 0;
 }
