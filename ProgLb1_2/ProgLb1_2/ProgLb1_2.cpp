@@ -18,8 +18,6 @@ void processArray(float* arr, float fArr[], int iLen, int jLen){
 	float* arrPointer = arr;
 	float* fArrPointer = fArr;
 	for (int j = 0; j < (iLen * jLen); j++) {
-		// если эта строка есть, то showArray выводит
-		//cout << j << endl;
 		*fArrPointer = *arrPointer;
 		fArrPointer++;
 		arrPointer++;
