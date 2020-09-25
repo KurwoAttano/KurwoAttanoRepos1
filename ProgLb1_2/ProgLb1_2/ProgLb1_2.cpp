@@ -8,7 +8,7 @@ using namespace std;
 
 void initArray(float* arr, int len){
 	float* pointer = arr;
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < len; i++) {
 		*pointer = i * exp(acos(-1.0) * i / 100);
 		pointer++;
 	}
@@ -46,10 +46,11 @@ int main()
 	processArray(primaryArray, &finalArray[0][0], 4, 4);
 	showArray(&finalArray[0][0], 4, 4);
 
-	//delete[] primaryArray;
-	/*for (int i = 0; i < 4; i++)
+	/*delete[] primaryArray;
+	for (int i = 0; i < 4; i++)
 		delete[] finalArray[i];
 	delete[] finalArray;*/
 
+	system("pause");
 	return 0;
 }

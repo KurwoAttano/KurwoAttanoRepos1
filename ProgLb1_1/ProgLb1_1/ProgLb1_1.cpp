@@ -1,5 +1,6 @@
 // Чечёткин Артур ИВТ-8 Лаба 1 Вариант 6 Часть 1
 
+#include <stdio.h>
 #include <iostream>
 #include <cmath>
 #include <ctime>
@@ -42,11 +43,13 @@ int processArray(float* arr, int len, int A, int B) {
 	}
 
 	// выводим выходной массив
-	cout << "Final Array: [";
+	printf("%s", "Final Array: [");
 	for (int i = 0; i < amount; i++) {
-		cout << finalArray[i] << " ";
+		printf("%.0f", finalArray[i]);
+		if (i < amount - 1) 
+			printf("%s", " ");
 	}
-	cout << "] \n";
+	printf("%s", "]\n");
 
 	delete [] finalArray;
 	delete [] suitable;
@@ -58,12 +61,21 @@ int main()
 	float primaryArray[15] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 	int A, B;
 	
-	cout << "Enter two nums (A < 0, B > 0)\n";
-	cout << "A = -";
-	cin >> A;
-	cout << "B = ";
-	cin >> B;
-	cout << "\n";
-	
-	cout << "Array Length: " << processArray(primaryArray, 15, A, B) << "\n\n";
+	printf("%s", "Enter two nums (A < 0, B > 0)\n");
+	printf("%s", "A = -");
+	scanf("%d", &A);
+	fflush(stdin);
+	printf("%s", "B = ");
+	scanf("%d", &B);
+	fflush(stdin);
+	printf("%s", "\n");
+
+	int amount = processArray(primaryArray, 15, A, B);
+
+	printf("%s", "Array Length: ");
+	printf("%d", amount);
+	printf("%s", "\n\n");
+
+	system("pause");
+	return 0;
 }
