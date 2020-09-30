@@ -1,11 +1,11 @@
-﻿Построение начато 25.09.2020 13:09:27.
+﻿Построение начато 30.09.2020 17:19:29.
      1>Проект "C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb1_2\ProgLb1_2\ProgLb1_2.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Debug\ProgLb1_2.unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ProgLb1_2.cpp
          ProgLb1_2.cpp
-     1>c:\users\31010\desktop\proglabs\kurwoattanorepos1\proglb1_2\proglb1_2\proglb1_2.cpp(12): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     1>c:\users\31010\desktop\proglabs\kurwoattanorepos1\proglb1_2\proglb1_2\proglb1_2.cpp(11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
        ManifestResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -24,4 +24,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:02.12
+Затраченное время: 00:00:03.85

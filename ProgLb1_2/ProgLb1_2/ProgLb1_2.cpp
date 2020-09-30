@@ -7,32 +7,40 @@
 using namespace std;
 
 void initArray(float* arr, int len){
-	float* pointer = arr;
-	for (int i = 0; i < len; i++) {
-		*pointer = i * exp(acos(-1.0) * i / 100);
-		pointer++;
-	}
+	for (int i = 0; i < len; i++)
+		*(arr + i) = i * exp(acos(-1.0) * i / 100);
 }
 
-void processArray(float* arr, float fArr[], int iLen, int jLen){
-	float* arrPointer = arr;
-	float* fArrPointer = fArr;
-	for (int j = 0; j < (iLen * jLen); j++) {
-		*fArrPointer = *arrPointer;
-		fArrPointer++;
-		arrPointer++;
-	}
+void processArray(float* arr, float** fArr, int iLen, int jLen){
+	for (int i = 0; i<iLen; i++)
+	    for (int j = 0; j < jLen; j++)
+			*(*(fArr + i) + j) =  *(arr + i + j);
 }
 
-void showArray(float fArr[], int iLen, int jLen){
-	float* fArrPointer = fArr;
+void showArray1(float* arr, int len){
+	cout << "[ ";
+	for (int i = 0; i < len; i++)
+		cout << setw(10) << *(arr + i) << " ";
+	cout << " ]\n\n";
+}
+
+void showArray2(float** fArr, int iLen, int jLen){
+	cout << "[ ";
 	for(int i = 0; i < iLen; i++) {
 		for (int j = 0; j < jLen; j++) {
-			cout << setw(10) << *fArrPointer << " ";
-			fArrPointer++;
+			if (i > 0 && j == 0) cout << "  ";
+			cout << setw(10) << *(*(fArr + i)+j) << " ";
 		}
-		cout << endl;
+		if (i == iLen - 1) cout << "]\n\n";
+		else cout << endl;
 	}
+}
+
+void DeleteArrays(float* arr,float** fArr, int size){
+    delete[] arr;
+	for (int i = 0; i < size; i++)
+		delete[] fArr[i];
+	delete[] fArr;
 }
 
 int main()
@@ -43,13 +51,11 @@ int main()
 		finalArray[i] = new float[4];
 
 	initArray(primaryArray, 16);
-	processArray(primaryArray, &finalArray[0][0], 4, 4);
-	showArray(&finalArray[0][0], 4, 4);
+	processArray(primaryArray, finalArray, 4, 4);
+	showArray1(primaryArray, 16);
+	showArray2(finalArray, 4, 4);
 
-	/*delete[] primaryArray;
-	for (int i = 0; i < 4; i++)
-		delete[] finalArray[i];
-	delete[] finalArray;*/
+	DeleteArrays(primaryArray, finalArray, 4);
 
 	system("pause");
 	return 0;
