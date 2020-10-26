@@ -1,0 +1,6 @@
+﻿  Matrix.cpp
+  ProgLb2_1.cpp
+C:\Users\31010\source\repos\ProgLb2\ProgLb2_1\ProgLb2_1.cpp(11,14): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  Vector.cpp
+  Создание кода...
+  ProgLb2_1.vcxproj -> C:\Users\31010\source\repos\ProgLb2\Debug\ProgLb2_1.exe
