@@ -1,17 +1,17 @@
 #pragma once
-#include "Vector.h"
-class Matrix
-{
+class Matrix {
 public:
     Matrix(int rowSize, int colSize) {
-        _rows = new Vector[rowSize];
+        _array = new float*[rowSize];
         for (int i = 0; i < rowSize; i++)
-            _rows[i] = Vector(colSize);
+            _array[i] = new float[colSize];
         _rowSize = rowSize;
         _colSize = colSize;
     }
     ~Matrix() {
-        delete[] _rows;
+        for (int i = 0; i < _rowSize; i++)
+            delete[] _array[i];
+        delete[] _array;
     }
 
     int getTotalLength() {
@@ -24,16 +24,34 @@ public:
         return _colSize;
     }
 
-    Vector& operator[](int index) {
-        return _rows[index]; 
+    float Get(int row, int col) { // at(){}
+        return _array[row][col];
     }
-    float operator=(float value) {
+    void Set(int row, int col, float value) { // setAt(){}
+        _array[row][col] = value;
+    }
+
+    float* operator [] (int i) {
+        return _array[i]; 
+    }
+    float operator = (float value) {
         return value;
+    }
+
+    void operator ++ () {
+        for (int i = 0; i < _rowSize; i++)
+            for (int j = 0; j < _colSize; j++)
+                _array[i][j]++;
+    }
+    void operator -- () {
+        for (int i = 0; i < _rowSize; i++)
+            for (int j = 0; j < _colSize; j++)
+                _array[i][j]--;
     }
 
 private:
     int _rowSize;
     int _colSize;
-    Vector* _rows;
+    float** _array;
 };
 

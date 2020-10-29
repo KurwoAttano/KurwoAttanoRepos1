@@ -36,13 +36,6 @@ void showArray2(Matrix& fArr) {
 	}
 }
 
-/*void DeleteArrays(Vector& arr, Matrix& fArr) {
-	delete arr;
-	for (int i = 0; i < size; i++)
-		delete[] fArr[i];
-	delete[] fArr;
-}*/
-
 int main()
 {
 	Vector primaryArray(16);
@@ -52,8 +45,6 @@ int main()
 	processArray(primaryArray, finalArray);
 	showArray1(primaryArray);
 	showArray2(finalArray);
-
-	//DeleteArrays();
 
 	system("pause");
 	return 0;

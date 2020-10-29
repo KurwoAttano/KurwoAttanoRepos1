@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <ctime>
-
 #include "Auto.h"
 
 using namespace std;
@@ -75,6 +74,17 @@ int main()
 	GoRide(anotherAuto, getRand(100, 800));
 	GoRide(anotherAuto, getRand(100, 800));
 	cout << endl;
+
+	cout << "Serialize example:" << endl;
+	mainAuto[0].setFirm("Serizlized_Audi");
+	cout << "Set firm: Serialized_Audi" << endl;
+	mainAuto[0].Serialize();
+	cout << "Serializing" << endl;
+	mainAuto[0].setFirm("Standart_Audi");
+	cout << "Set firm \"Standart_Audi\"" << endl;
+	mainAuto[0].Deserialize();
+	cout << "Deserializing" << endl;
+	cout << "Current firm: " << mainAuto[0].getFirm() << endl;
 
 	system("pause");
 	return 0;

@@ -9,27 +9,18 @@ public:
 		_length = index;
 	}
 	~Vector() {
-		printf("%s", "DEL VECTOR: (length==");
-		printf("%d", _length);
-		printf("%s", ")\n");
-		for (int i = 0; i < _length; i++) {
-			printf("%f\n", (float)_array[i]);
-		}
-		printf("%s", "\n");
-
-		//delete[] _array; //FUCKING STRANGE DELETER
+		delete[] _array;
 	}
 
 	int getLength() {
 		return _length;
 	}
 
-	float& operator[](int index) {
+	float& operator [] (int index) {
 		return _array[index];
 	}
 
-//private:
-public:
+private:
 	int _length;
 	float* _array;
 };
