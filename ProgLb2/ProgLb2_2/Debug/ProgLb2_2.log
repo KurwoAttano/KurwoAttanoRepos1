@@ -1,27 +1,13 @@
-﻿  Fraction.cpp
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(63,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(74,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(78,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(79,33): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(83,20): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(94,39): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(191,17): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(195,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(196,22): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(200,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(211,40): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-  ProgLb2_2.cpp
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(63,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(74,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(78,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(79,33): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(83,20): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(94,39): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(191,17): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(195,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(196,22): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(200,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(211,40): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-  Создание кода...
-ProgLb2_2.obj : error LNK2001: неразрешенный внешний символ "public: static int Fraction::FractionCount" (?FractionCount@Fraction@@2HA).
-C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\Debug\ProgLb2_2.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
+﻿  ProgLb2_2.cpp
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(67,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(78,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(82,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(83,33): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(87,20): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(98,39): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(194,17): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(198,11): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(199,22): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(203,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2_2\Fraction.h(214,40): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  ProgLb2_2.vcxproj -> C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\Debug\ProgLb2_2.exe

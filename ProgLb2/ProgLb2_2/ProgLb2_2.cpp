@@ -5,9 +5,11 @@
 
 using namespace std;
 
+int Fraction::FractionCount = 0;
+
 int main()
 {
-	//cout << Fraction::GetFractionCount() << endl;
+	cout << "FractionCount: " << Fraction::GetFractionCount() << endl << endl;
 
 	Fraction fract1(12, 24);
 	cout << "fract1(12, 24) = " << fract1 << endl;
@@ -48,6 +50,8 @@ int main()
 	Fraction::PrintAsFraction(0.14);
 
 	cout << endl;
+
+	cout << "FractionCount: " << Fraction::GetFractionCount() << endl << endl;
 
 	system("pause");
 	return 0;

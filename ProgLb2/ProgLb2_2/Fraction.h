@@ -7,6 +7,7 @@ class Fraction{
 public:
 	Fraction(int numerator, int denominator) {
 		SetToZero();
+		FractionCount++;
 		_numerator = abs(numerator);
 		_denominator = abs(denominator);
 		if (numerator < 0) _positive = !_positive;
@@ -14,6 +15,7 @@ public:
 	}
 	Fraction(int integer, int numerator, int denominator) {
 		SetToZero();
+		FractionCount++;
 		_integer = abs(integer);
 		_numerator = abs(numerator);
 		_denominator = abs(denominator);
@@ -23,11 +25,13 @@ public:
 	}
 	Fraction(int fractional) {
 		SetToZero();
+		FractionCount++;
 		_integer = abs(fractional);
 		if (fractional < 0) _positive = false;
 	}
 	Fraction(double fractional) {
 		SetToZero();
+		FractionCount++;
 		ConvertToFraction(abs(fractional));
 		if (fractional < 0) _positive = false;
 	}
