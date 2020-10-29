@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-class Fraction
-{
+
+class Fraction{
 public:
 	Fraction(int numerator, int denominator) {
 		SetToZero();
@@ -26,30 +26,19 @@ public:
 		_integer = abs(fractional);
 		if (fractional < 0) _positive = false;
 	}
-	Fraction(float fractional) {
-		SetToZero();
-		ConvertToFraction(abs(fractional));
-		if (fractional < 0) _positive = false;
-	}
 	Fraction(double fractional) {
 		SetToZero();
 		ConvertToFraction(abs(fractional));
 		if (fractional < 0) _positive = false;
 	}
 	
-	float GetInt() {
+	int GetInt() {
 		if (_numerator > 0)
 			return int((_integer + double(_numerator) / _denominator) * (_positive == false ? -1 : 1));
 		else
 			return _integer * (_positive == false ? -1 : 1);
 	}
-	float GetFloat() {
-		if (_numerator > 0)
-			return (_integer + float(_numerator) / _denominator) * (_positive == false ? -1 : 1);
-		else
-			return _integer * (_positive == false ? -1 : 1);
-	}
-	float GetDouble() {
+	double GetDouble() {
 		if (_numerator > 0)
 			return (_integer + double(_numerator) / _denominator) * (_positive == false ? -1 : 1);
 		else
@@ -61,10 +50,13 @@ public:
 	}
 
 	static int gcd(int n, int m) {
-		int temp = n > m ? m : n;
-		while (n % temp != 0 || m % temp != 0)
-			temp--;
-		return temp;
+		long nod = 1L;
+		for (long i = n > m ? m : n; i > 0; i--)
+			if (n % i == 0 && m % i == 0) {
+				nod = i;
+				break;
+			}
+		return nod;
 	}
 
 	static void PrintAsFraction(double decimal_fraction) {
@@ -117,40 +109,45 @@ public:
 		PrintAsFraction(atof(decimal_fraction));
 	}
 
+	static int FractionCount; //!
+	static int GetFractionCount() {
+		return FractionCount;
+	}
+
 	// Plus
 	Fraction operator + (Fraction value) {
-		return Fraction(GetFloat() + value.GetFloat());
+		return Fraction(GetDouble() + value.GetDouble());
 	}
 	template <typename T>
 	Fraction operator + (T value) {
-		return Fraction(GetFloat() + value);
+		return Fraction(GetDouble() + value);
 	}
 
 	// Minus
 	Fraction operator - (Fraction value) {
-		return Fraction(GetFloat() - value.GetFloat());
+		return Fraction(GetDouble() - value.GetDouble());
 	}
 	template <typename T>
 	Fraction operator - (T value) {
-		return Fraction(GetFloat() - value);
+		return Fraction(GetDouble() - value);
 	}
 
 	// Multiply
 	Fraction operator * (Fraction value) {
-		return Fraction(GetFloat() * value.GetFloat());
+		return Fraction(GetDouble() * value.GetDouble());
 	}
 	template <typename T>
 	Fraction operator * (T value) {
-		return Fraction(GetFloat() * value);
+		return Fraction(GetDouble() * value);
 	}
 
 	// Divide
 	Fraction operator / (Fraction value) {
-		return Fraction(GetFloat() / value.GetFloat());
+		return Fraction(GetDouble() / value.GetDouble());
 	}
 	template <typename T>
 	Fraction operator / (T value) {
-		return Fraction(GetFloat() / value);
+		return Fraction(GetDouble() / value);
 	}
 
 	friend ostream& operator << (ostream& os, const Fraction& value) {

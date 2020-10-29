@@ -1,1 +1,1 @@
-{"_firm":Serizlized_Audi,"_model":TT,"_number":AP123P,"_price":@,"_year":Ù,"_mileage":>,}
+{"_firm":Serizlized_Audi,"_model":TT,"_number":AP123P,"_price":@,"_year":Ù,"_mileage":2,}

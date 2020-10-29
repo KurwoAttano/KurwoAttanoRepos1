@@ -7,6 +7,8 @@ using namespace std;
 
 int main()
 {
+	//cout << Fraction::GetFractionCount() << endl;
+
 	Fraction fract1(12, 24);
 	cout << "fract1(12, 24) = " << fract1 << endl;
 

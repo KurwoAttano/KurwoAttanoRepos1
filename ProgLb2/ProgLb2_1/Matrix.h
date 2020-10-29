@@ -38,15 +38,34 @@ public:
         return value;
     }
 
-    void operator ++ () {
+    // prefix
+    Matrix& operator ++ () {
         for (int i = 0; i < _rowSize; i++)
             for (int j = 0; j < _colSize; j++)
                 _array[i][j]++;
+        return *this;
     }
-    void operator -- () {
+    Matrix& operator -- () {
         for (int i = 0; i < _rowSize; i++)
             for (int j = 0; j < _colSize; j++)
                 _array[i][j]--;
+        return *this;
+    }
+
+    // postfix
+    Matrix operator ++ (int) {
+        Matrix temp(_rowSize, _colSize);
+        for (int i = 0; i < _rowSize; i++)
+            for (int j = 0; j < _colSize; j++)
+                temp[i][j] = _array[i][j]++;
+        return temp;
+    }
+    Matrix operator -- (int) {
+        Matrix temp(_rowSize, _colSize);
+        for (int i = 0; i < _rowSize; i++)
+            for (int j = 0; j < _colSize; j++)
+                temp[i][j] = _array[i][j]--;
+        return temp;
     }
 
 private:

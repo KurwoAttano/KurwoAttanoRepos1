@@ -1,8 +1,7 @@
-﻿  ProgLb2_3.cpp
-C:\Users\31010\source\repos\ProgLb2\ProgLb2\Auto.h(26,14): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\31010\source\repos\ProgLb2\ProgLb2\Auto.h(92,53): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\31010\source\repos\ProgLb2\ProgLb2\ProgLb2_3.cpp(48,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\31010\source\repos\ProgLb2\ProgLb2\Auto.h(108,10): warning C4244: аргумент: преобразование "T" в "_Elem", возможна потеря данных
+﻿  Auto.cpp
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(26,14): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(92,53): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(108,10): warning C4244: аргумент: преобразование "T" в "_Elem", возможна потеря данных
           with
           [
               T=float
@@ -11,9 +10,28 @@ C:\Users\31010\source\repos\ProgLb2\ProgLb2\Auto.h(108,10): warning C4244: ар�
           [
               _Elem=char
           ]
-C:\Users\31010\source\repos\ProgLb2\ProgLb2\Auto.h(53): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::string Auto::SerialIizeParam<float>(std::string,T)"
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(53): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::string Auto::SerialIizeParam<float>(std::string,T)"
           with
           [
               T=float
           ]
-  ProgLb2.vcxproj -> C:\Users\31010\source\repos\ProgLb2\Debug\ProgLb2_3.exe
+  ProgLb2_3.cpp
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(26,14): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(92,53): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\ProgLb2_3.cpp(48,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(108,10): warning C4244: аргумент: преобразование "T" в "_Elem", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              _Elem=char
+          ]
+C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\ProgLb2\Auto.h(53): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::string Auto::SerialIizeParam<float>(std::string,T)"
+          with
+          [
+              T=float
+          ]
+  Создание кода...
+  ProgLb2.vcxproj -> C:\Users\31010\Desktop\ProgLabs\kurwoattanorepos1\ProgLb2\Debug\ProgLb2_3.exe
