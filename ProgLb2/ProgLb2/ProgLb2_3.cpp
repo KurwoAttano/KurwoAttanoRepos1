@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 #include "Auto.h"
 
@@ -16,6 +17,64 @@ void GoRide(Auto* myAuto, int distance) {
 
 int getRand(int min, int max) {
 	return min + rand() % max;
+}
+
+void Sort(Auto* arr, int len) {
+	int isFrom2014_Count = 0;
+	for (int i = 0; i < len; i++)
+		if (arr[i].getYear() >= 2014) 
+			isFrom2014_Count++;
+
+	Auto* from2014 = new Auto[isFrom2014_Count];
+	Auto* before2014 = new Auto[len - isFrom2014_Count];
+
+	int iter1 = 0;
+	int iter2 = 0;
+	for (int i = 0; i < len; i++)
+		if (arr[i].getYear() >= 2014) {
+			from2014[iter1] = arr[i];
+			iter1++;
+		} else {
+			before2014[iter2] = arr[i];
+			iter2++;
+		}
+
+	int j = 0;
+	Auto* temp = new Auto;
+	for (int i = 0; i < isFrom2014_Count; i++) {
+		j = i;
+		for (int k = i; k < isFrom2014_Count; k++)
+			if (from2014[j].getMileage() > from2014[k].getMileage())
+				j = k;
+		*temp = from2014[i];
+		from2014[i] = from2014[j];
+		from2014[j] = *temp;
+	}
+	j = 0;
+	for (int i = 0; i < len - isFrom2014_Count; i++) {
+		j = i;
+		for (int k = i; k < len - isFrom2014_Count; k++)
+			if (before2014[j].getMileage() > before2014[k].getMileage())
+				j = k;
+		*temp = before2014[i];
+		before2014[i] = before2014[j];
+		before2014[j] = *temp;
+	}
+
+	Auto* newArr = new Auto[len];
+	for (int i = 0; i < len; i++)
+		if (i < isFrom2014_Count)
+			newArr[i] = from2014[i];
+		else
+			newArr[i] = before2014[i - (len - isFrom2014_Count)];
+
+	for (int i = 0; i < len; i++)
+		arr[i] = newArr[i];
+
+	delete[] from2014;
+	delete[] before2014;
+	delete[] newArr;
+	delete temp;
 }
 
 int main()
@@ -45,35 +104,21 @@ int main()
 
 	Auto* anotherAuto = new Auto("BMW", "M5", "XX666X", 920000, 2016, 45034);
 
+	Auto* autos = new Auto[4];
+	for (int i = 0; i < 3; i++)
+		autos[i] = mainAuto[i];
+	autos[3] = *anotherAuto;
+
 	srand(time(0));
 
-	cout << "Car: " << mainAuto[0].getFirm() << " " << mainAuto[0].getModel() << " " << mainAuto[0].getNumber() << endl;
-	cout << "Current mileage: " << mainAuto[0].getMileage() << endl << endl;
-	GoRide(mainAuto, 0, getRand(100, 800));
-	GoRide(mainAuto, 0, getRand(100, 800));
-	GoRide(mainAuto, 0, getRand(100, 800));
-	cout << endl;
-
-	cout << "Car: " << mainAuto[1].getFirm() << " " << mainAuto[1].getModel() << " " << mainAuto[1].getNumber() << endl;
-	cout << "Current mileage: " << mainAuto[1].getMileage() << endl << endl;
-	GoRide(mainAuto, 1, getRand(100, 800));
-	GoRide(mainAuto, 1, getRand(100, 800));
-	GoRide(mainAuto, 1, getRand(100, 800));
-	cout << endl;
-
-	cout << "Car: " << mainAuto[2].getFirm() << " " << mainAuto[2].getModel() << " " << mainAuto[2].getNumber() << endl;
-	cout << "Current mileage: " << mainAuto[2].getMileage() << endl << endl;
-	GoRide(mainAuto, 2, getRand(100, 800));
-	GoRide(mainAuto, 2, getRand(100, 800));
-	GoRide(mainAuto, 2, getRand(100, 800));
-	cout << endl;
-
-	cout << "Car: " << anotherAuto->getFirm() << " " << anotherAuto->getModel() << " " << anotherAuto->getNumber() << endl;
-	cout << "Current mileage: " << anotherAuto->getMileage() << endl << endl;
-	GoRide(anotherAuto, getRand(100, 800));
-	GoRide(anotherAuto, getRand(100, 800));
-	GoRide(anotherAuto, getRand(100, 800));
-	cout << endl;
+	for (int i = 0; i < 4; i++) {
+		cout << "Car: " << autos[i].getFirm() << " " << autos[i].getModel() << " " << autos[i].getNumber() << endl;
+		cout << "Current mileage: " << autos[i].getMileage() << endl << endl;
+		GoRide(autos, 0, getRand(100, 800));
+		GoRide(autos, 0, getRand(100, 800));
+		GoRide(autos, 0, getRand(100, 800));
+		cout << endl;
+	}
 
 	cout << "Serialize example:" << endl;
 	mainAuto[0].setFirm("Serizlized_Audi");
@@ -84,7 +129,27 @@ int main()
 	cout << "Set firm \"Standart_Audi\"" << endl;
 	mainAuto[0].Deserialize();
 	cout << "Deserializing" << endl;
-	cout << "Current firm: " << mainAuto[0].getFirm() << endl;
+	cout << "Current firm: " << mainAuto[0].getFirm() << endl << endl;
+
+	cout << "Array before sort:" << endl;
+	for (int i = 0; i < 4; i++) {
+		cout << i << ") "; 
+		cout << autos[i].getFirm() << " " << autos[i].getModel() << "   ";
+		cout << autos[i].getYear() << "   ";
+		cout << autos[i].getMileage() << endl;
+	}
+	Sort(autos, 4);
+	cout << endl;
+	cout << "Array after sort:" << endl;
+	for (int i = 0; i < 4; i++) {
+		cout << i << ") ";
+		cout << autos[i].getFirm() << " " << autos[i].getModel() << "   ";
+		cout << autos[i].getYear() << "   ";
+		cout << autos[i].getMileage() << endl;
+	}
+	cout << endl;
+
+	delete anotherAuto;
 
 	system("pause");
 	return 0;
